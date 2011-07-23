@@ -40,7 +40,6 @@ void EchoClient::onClickSend()
     QUdpSocket *udp =new QUdpSocket(this);
     const QHostAddress *host = new QHostAddress(ui->leServerName->text());
 
-    //const char *txt = (const char*) ui->leText->text().toLocal8Bit().data();
     QByteArray ba = ui->leText->text().toLocal8Bit();
     const char *txt = ba.data();
     qint16 len = ui->leText->text().length();
