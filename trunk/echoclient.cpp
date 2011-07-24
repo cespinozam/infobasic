@@ -3,6 +3,7 @@
 #include "qtudpclient.h"
 #include <QUdpSocket>
 #include <QHostAddress>
+#include <QHostInfo>
 #include <iostream>
 
 const quint16 EchoClient::PORT_MIN = 1;
@@ -31,7 +32,6 @@ void EchoClient::putTexts()
     ui->lbPort->setText(tr("Port"));
     ui->leServerName->setText("localhost");
     ui->pbSend->setText(tr("Send"));
-
 }
 
 void EchoClient::setuid()
@@ -48,15 +48,19 @@ void EchoClient::setuid()
 void EchoClient::onClickSend()
 {
     qDebug("onClickSend");
-    QUdpSocket *udp =new QUdpSocket(this);
-    const QHostAddress *host = new QHostAddress(ui->leServerName->text());
 
-    QByteArray ba = ui->leText->text().toLocal8Bit();
-    const char *txt = ba.data();
-    qint16 len = ui->leText->text().length();
-    qint16 port = ui->sldPort->value();
-    udp->writeDatagram(txt, len, QHostAddress::LocalHost,  port);
-    qDebug(ui->leServerName->text().toStdString().c_str());
-    delete host;
-    delete udp;
+    QHostInfo info = QHostInfo::fromName(ui->leServerName->text());
+    if (!info.addresses().isEmpty())
+    {
+        QHostAddress address = info.addresses().first();
+        QByteArray ba = ui->leText->text().toLocal8Bit();
+        const char *txt = ba.data();
+        qint16 len = ui->leText->text().length();
+        qint16 port = ui->sldPort->value();
+
+        QUdpSocket *udp =new QUdpSocket(this);
+        udp->writeDatagram(txt, len, address,  port);
+        //qDebug(ui->leServerName->text().toStdString().c_str());
+        delete udp;
+    }
 }
