@@ -24,6 +24,9 @@ public slots:
 
 private:
     Ui::EchoClient *ui;
+    static const quint16 PORT_MIN;
+    static const quint16 PORT_MAX;
+    static const quint16 PORT_DEFAULT;
 };
 
 #endif // ECHOCLIENT_H
