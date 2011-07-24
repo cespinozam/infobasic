@@ -4,6 +4,7 @@
 #include <QUdpSocket>
 #include <QHostAddress>
 #include <QHostInfo>
+#include <QMessageBox>
 #include <iostream>
 
 const quint16 EchoClient::PORT_MIN = 1;
@@ -62,5 +63,13 @@ void EchoClient::onClickSend()
         udp->writeDatagram(txt, len, address,  port);
         //qDebug(ui->leServerName->text().toStdString().c_str());
         delete udp;
+    } else
+    {
+        QMessageBox msgBox;
+        msgBox.setWindowTitle(tr("Error"));
+        msgBox.setText(tr("Error host not found"));
+        msgBox.setIcon(QMessageBox::Critical);
+        msgBox.setStandardButtons(QMessageBox::Ok);
+        msgBox.exec();
     }
 }
