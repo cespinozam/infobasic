@@ -42,5 +42,6 @@ void AboutDialog::putTexts()
 
 void AboutDialog::setuid()
 {
+    setAttribute(Qt::WA_DeleteOnClose);
     connect(ui->labelLink, SIGNAL(linkActivated(QString)), this, SLOT(onClickLink()));
 }
