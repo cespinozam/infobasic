@@ -28,7 +28,7 @@ EchoClient::~EchoClient()
 
 void EchoClient::putTexts()
 {
-    this->setWindowTitle(tr("Cliente echo UDP"));
+    this->setWindowTitle(tr("UDP echo client"));
     ui->lbServerName->setText(tr("Server Name"));
     ui->lbText->setText(tr("Text"));
     ui->lbPort->setText(tr("Port"));

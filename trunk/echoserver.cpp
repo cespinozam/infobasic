@@ -29,7 +29,7 @@ EchoServer::~EchoServer()
 
 void EchoServer::putTexts()
 {
-    this->setWindowTitle(tr("Servidor echo UDP"));
+    this->setWindowTitle(tr("UDP echo server"));
     ui->lbPort->setText(tr("Port"));
     ui->pbStart->setText(tr("Start"));
 }

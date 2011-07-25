@@ -13,21 +13,22 @@ TEMPLATE = app
 SOURCES += main.cpp\
         mainwindow.cpp \
     echoclient.cpp \
-    qtudpclient.cpp \
     aboutdialog.cpp \
-    echoserver.cpp
+    echoserver.cpp \
+    scanner.cpp
 
 HEADERS  += mainwindow.h \
     IForm.h \
     echoclient.h \
-    qtudpclient.h \
     aboutdialog.h \
-    echoserver.h
+    echoserver.h \
+    scanner.h
 
 FORMS    += mainwindow.ui \
     echoclient.ui \
     aboutdialog.ui \
-    echoserver.ui
+    echoserver.ui \
+    scanner.ui
 
 RESOURCES += \
     resources.qrc
