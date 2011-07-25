@@ -5,5 +5,6 @@
         <file alias="server">icons/PNG/Blue/32/Forward.png</file>
         <file alias="close">icons/PNG/Blue/32/close.png</file>
         <file alias="app">icons/PNG/Blue/32/Cycle.png</file>
+        <file alias="scan">icons/PNG/Blue/32/zoom.png</file>
     </qresource>
 </RCC>

@@ -21,7 +21,7 @@
   </property>
   <property name="windowIcon">
    <iconset resource="resources.qrc">
-    <normaloff>:/icons/about</normaloff>:/icons/about</iconset>
+    <normaloff>:/icons/app</normaloff>:/icons/app</iconset>
   </property>
   <widget class="QWidget" name="centralWidget">
    <layout class="QGridLayout" name="gridLayout">
@@ -70,7 +70,14 @@
     </property>
     <addaction name="actionAbout"/>
    </widget>
+   <widget class="QMenu" name="menuScanner">
+    <property name="title">
+     <string>Scanner</string>
+    </property>
+    <addaction name="actionScan"/>
+   </widget>
    <addaction name="menuExit"/>
+   <addaction name="menuScanner"/>
    <addaction name="menuUdp"/>
    <addaction name="menuHelp"/>
   </widget>
@@ -84,16 +91,18 @@
    <attribute name="toolBarBreak">
     <bool>false</bool>
    </attribute>
+   <addaction name="actionScan"/>
    <addaction name="actionEchoServer"/>
    <addaction name="actionEchoClient"/>
    <addaction name="separator"/>
    <addaction name="actionAbout"/>
+   <addaction name="separator"/>
   </widget>
   <widget class="QStatusBar" name="statusBar"/>
   <action name="actionExit">
    <property name="icon">
-    <iconset>
-     <normaloff>:/icons/icons/PNG/Blue/32/close.png</normaloff>:/icons/icons/PNG/Blue/32/close.png</iconset>
+    <iconset resource="resources.qrc">
+     <normaloff>:/icons/close</normaloff>:/icons/close</iconset>
    </property>
    <property name="text">
     <string>Exit</string>
@@ -124,6 +133,15 @@
    </property>
    <property name="text">
     <string>About</string>
+   </property>
+  </action>
+  <action name="actionScan">
+   <property name="icon">
+    <iconset resource="resources.qrc">
+     <normaloff>:/icons/scan</normaloff>:/icons/scan</iconset>
+   </property>
+   <property name="text">
+    <string>Scan</string>
    </property>
   </action>
  </widget>

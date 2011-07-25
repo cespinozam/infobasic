@@ -2,6 +2,7 @@
 #include "echoclient.h"
 #include "echoserver.h"
 #include "aboutdialog.h"
+#include "scanner.h"
 #include "ui_mainwindow.h"
 
 const char* MainWindow::APP_NAME = "Infobasic";
@@ -54,6 +55,16 @@ void MainWindow::onClickAbout()
     about->show();
 }
 
+void MainWindow::onClickScan()
+{
+    qDebug("onClickScan");
+
+    QWidget *scanner =  new Scanner();
+    ui->mdiArea->addSubWindow(scanner);
+    ui->mdiArea->showMaximized();
+    scanner->show();
+}
+
 void MainWindow::putTexts()
 {
     setWindowTitle(APP_NAME);
@@ -65,5 +76,6 @@ void MainWindow::setuid()
     connect(ui->actionEchoClient, SIGNAL(triggered()), SLOT(onClickClientEcho()));
     connect(ui->actionEchoServer, SIGNAL(triggered()), SLOT(onClickServerEcho()));
     connect(ui->actionAbout, SIGNAL(triggered()), SLOT(onClickAbout()));
+    connect(ui->actionScan, SIGNAL(triggered()), SLOT(onClickScan()));
     setCentralWidget(ui->mdiArea);
 }

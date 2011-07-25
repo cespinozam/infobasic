@@ -21,6 +21,7 @@ public slots:
     void onClickClientEcho();
     void onClickServerEcho();
     void onClickAbout();
+    void onClickScan();
 
 public:
     virtual void putTexts();
