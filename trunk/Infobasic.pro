@@ -14,14 +14,17 @@ SOURCES += main.cpp\
         mainwindow.cpp \
     echoclient.cpp \
     qtudpclient.cpp \
-    aboutdialog.cpp
+    aboutdialog.cpp \
+    echoserver.cpp
 
 HEADERS  += mainwindow.h \
     IForm.h \
     echoclient.h \
     qtudpclient.h \
-    aboutdialog.h
+    aboutdialog.h \
+    echoserver.h
 
 FORMS    += mainwindow.ui \
     echoclient.ui \
-    aboutdialog.ui
+    aboutdialog.ui \
+    echoserver.ui

@@ -1,5 +1,6 @@
 #include "mainwindow.h"
 #include "echoclient.h"
+#include "echoserver.h"
 #include "aboutdialog.h"
 #include "ui_mainwindow.h"
 
@@ -38,6 +39,10 @@ void MainWindow::onClickClientEcho()
 void MainWindow::onClickServerEcho()
 {
     qDebug("onClickServerEcho");
+    QWidget *server =  new EchoServer();
+    ui->mdiArea->addSubWindow(server);
+    ui->mdiArea->showMaximized();
+    server->show();
 }
 
 void MainWindow::onClickAbout()

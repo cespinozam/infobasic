@@ -16,6 +16,11 @@ public:
     explicit EchoClient(QWidget *parent = 0);
     virtual ~EchoClient();
 
+    static const quint16 PORT_MIN;
+    static const quint16 PORT_MAX;
+    static const quint16 PORT_DEFAULT;
+
+protected:
     virtual void putTexts();
     virtual void setuid();
 
@@ -24,9 +29,6 @@ public slots:
 
 private:
     Ui::EchoClient *ui;
-    static const quint16 PORT_MIN;
-    static const quint16 PORT_MAX;
-    static const quint16 PORT_DEFAULT;
 };
 
 #endif // ECHOCLIENT_H

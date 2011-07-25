@@ -28,6 +28,7 @@ EchoClient::~EchoClient()
 
 void EchoClient::putTexts()
 {
+    this->setWindowTitle(tr("Cliente echo UDP"));
     ui->lbServerName->setText(tr("Server Name"));
     ui->lbText->setText(tr("Text"));
     ui->lbPort->setText(tr("Port"));
@@ -61,7 +62,6 @@ void EchoClient::onClickSend()
 
         QUdpSocket *udp =new QUdpSocket(this);
         udp->writeDatagram(txt, len, address,  port);
-        //qDebug(ui->leServerName->text().toStdString().c_str());
         delete udp;
     } else
     {
