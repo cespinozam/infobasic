@@ -1,0 +1,9 @@
+<RCC>
+    <qresource prefix="/icons" lang="es">
+        <file alias="about">icons/PNG/Blue/32/about.png</file>
+        <file alias="client">icons/PNG/Blue/32/download.png</file>
+        <file alias="server">icons/PNG/Blue/32/Forward.png</file>
+        <file alias="close">icons/PNG/Blue/32/close.png</file>
+        <file alias="app">icons/PNG/Blue/32/Cycle.png</file>
+    </qresource>
+</RCC>

@@ -28,3 +28,6 @@ FORMS    += mainwindow.ui \
     echoclient.ui \
     aboutdialog.ui \
     echoserver.ui
+
+RESOURCES += \
+    resources.qrc
