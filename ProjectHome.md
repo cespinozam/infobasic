@@ -1,0 +1,1 @@
+basic program to management sockets whith qt.
